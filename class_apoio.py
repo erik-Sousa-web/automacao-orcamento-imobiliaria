@@ -4,6 +4,7 @@ import tkinter as tk
 from tkinter import messagebox
 import colorama
 from colorama import Fore, Style
+from datetime import datetime
 
 colorama.init(autoreset=True)
 
@@ -24,15 +25,17 @@ class ORCAMENNTO:
         diretorio_saida = "Contratos_Gerados"
         if not os.path.exists(diretorio_saida):
             os.makedirs(diretorio_saida)
+        agora = datetime.now().strftime("%d-%m-%Y _ %H-%M")
 
-        nome_arquivo = os.path.join(diretorio_saida, f"locação{self.nome}.csv")
-
+        nome_arquivo = os.path.join(diretorio_saida, f"Contrato - '{self.tipo_locacao}' {self.nome} {agora}.csv")
+    
         meses_lista = ["Janeiro","Fevereiro", "Março", "Abril", "Maio", "Junho",
          "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
         with open(nome_arquivo, mode='w', newline='', encoding='utf-8') as ficheiro:
             escritor = csv.writer(ficheiro)
             escritor.writerow(['SISTEMA R.M LOCAÇÃO - CRONOGRAMA DE PAGAMENTO'])
             escritor.writerow(['CLIENTE', self.nome, 'CPF', self.cpf,'IMÓVEL', self.tipo_locacao])
+            escritor.writerow(['DETALHES', " | ".join(self.detalhes)])      
             escritor.writerow(['MÊS','ALUGUEL (R$)', 'CONTRATO (R$)', 'TOTAL(R$)'])
 
 
