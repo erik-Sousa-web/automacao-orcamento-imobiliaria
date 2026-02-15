@@ -1,3 +1,7 @@
+# Erik dos Santos Sousa
+# ADS-EAD
+# RA - 151230
+
 from class_apoio import *
 
 
@@ -61,12 +65,11 @@ def executar_locacao(tipo_locacao):
                     except ValueError:
                         print(f"{Fore.RED}⚠️ Erro: Digite apenas o NÚMERO de vagas (ex: 1, 2, 3).{Style.RESET_ALL}")
                 
-                break # Sai do loop principal do Estúdio
+                break
                 
             elif vaga_padrao == '2':
                 print(f"{Fore.YELLOW}ℹ️ Prosseguindo sem vagas de garagem para o Estúdio.{Style.RESET_ALL}")
-                break # Sai do loop sem adicionar nada
-            
+                break 
             else:
                 print(f"{Fore.RED}⚠️ Opção inválida! Escolha 1 para Sim ou 2 para Não.{Style.RESET_ALL}")
                 input("Pressione ENTER para tentar novamente...")

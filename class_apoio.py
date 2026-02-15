@@ -8,6 +8,7 @@ from datetime import datetime
 
 colorama.init(autoreset=True)
 
+
 class ORCAMENNTO:
     def __init__(self, nome, cpf, tipo_locacao):
         self.nome = nome
