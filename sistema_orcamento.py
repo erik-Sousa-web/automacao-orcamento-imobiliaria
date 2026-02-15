@@ -46,16 +46,16 @@ def executar_locacao(tipo_locacao):
                 resumo.valor_aluguel += 250.00
                 resumo.detalhes.append("2 Vagas (Condição Especial)")
                 
-                # Loop para tratar erro nas vagas EXTRAS
+               
                 while True:
                     try:
                         vaga_extra = int(input("Deseja adicionar mais vagas extras (R$ 60,00 cada)? (Digite 0 para não): "))
                         if vaga_extra >= 0:
                             if vaga_extra > 0:
-                                resumo.valor_aluguel += (vaga_extra * 60.00) # Preço fixo da extra
+                                resumo.valor_aluguel += (vaga_extra * 60.00)
                                 resumo.detalhes.append(f"{vaga_extra} Vaga(s) Extra(s)")
                             print(f"{Fore.GREEN}✅ Vagas configuradas com sucesso!{Style.RESET_ALL}")
-                            break # Sai do loop das extras
+                            break
                         else:
                             print(f"{Fore.RED}⚠️ Por favor, digite um número positivo.{Style.RESET_ALL}")
                     except ValueError:
@@ -97,7 +97,7 @@ def executar_locacao(tipo_locacao):
                 if 1 <= qtd_parcelas <= 5:
                     resumo.parcela_contrato =qtd_parcelas
                     resumo.valor_contrato_mensal = 2000.00 / qtd_parcelas 
-                    print(f"{Fore.GREEN}✅ Parcelamento em {qtd_parcelas}x configurado com sucesso.{Style.RESET_ALL}")
+                    print(f"{Fore.GREEN}✅ Contrato Parcelamento em {qtd_parcelas}x.{Style.RESET_ALL}")
                     break
                 else:
                     print("Quantidade de parcelas inválida!")
