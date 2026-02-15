@@ -1,7 +1,5 @@
 import os
 import csv
-import tkinter as tk
-from tkinter import messagebox
 import colorama
 from colorama import Fore, Style
 from datetime import datetime
